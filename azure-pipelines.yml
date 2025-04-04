@@ -19,18 +19,3 @@ steps:
 - script: |
     ls -la $(system.defaultWorkingDirectory)
   displayName: 'List files in the working directory'
-
-- script: |
-    go version
-    if [ ! -f go.mod ]; then
-        go mod init example.com/canicas
-    fi
-    go mod tidy
-    go mod download
-    if [ -f Gopkg.toml ]; then
-        curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-        dep ensure
-    fi
-    go build -v .
-  workingDirectory: '$(system.defaultWorkingDirectory)'
-  displayName: 'Get dependencies, then build'
