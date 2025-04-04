@@ -34,9 +34,3 @@ steps:
     go build -v .
   workingDirectory: '$(system.defaultWorkingDirectory)'
   displayName: 'Get dependencies, then build'
-  
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'gobinary'
-    publishLocation: 'pipeline'
