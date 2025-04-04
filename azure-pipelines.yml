@@ -4,9 +4,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/go
 # Template requirements: *.go and go.mod files in directory
 
-trigger:
-- main
-
 pool:
   vmImage: ubuntu-latest
 
